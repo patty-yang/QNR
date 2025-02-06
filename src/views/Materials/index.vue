@@ -16,41 +16,6 @@
             </el-icon>
             <div>{{ item.text }}</div>
           </RouterLink>
-
-          <!-- <RouterLink class="category-item">
-            <el-icon>
-              <EditPen />
-            </el-icon>
-            <div>文本输入</div>
-          </RouterLink>
-
-          <RouterLink class="category-item">
-            <el-icon>
-              <Files />
-            </el-icon>
-            <div>高级题型</div>
-          </RouterLink>
-
-          <RouterLink class="category-item">
-            <el-icon>
-              <ChatLineSquare />
-            </el-icon>
-            <div>备注说明</div>
-          </RouterLink>
-
-          <RouterLink class="category-item">
-            <el-icon>
-              <User />
-            </el-icon>
-            <div>个人信息</div>
-          </RouterLink>
-
-          <RouterLink class="category-item">
-            <el-icon>
-              <Message />
-            </el-icon>
-            <div>联系方式</div>
-          </RouterLink> -->
         </nav>
         <div class="coms">
           <RouterView />
@@ -70,6 +35,7 @@ import { navList } from './var'
 h1 {
   height: 50px;
   margin: 20px 0;
+  line-height: 50px;
 }
 
 .container {

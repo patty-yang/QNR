@@ -2,7 +2,6 @@ type NavItem = {
   icon: string
   text: string
   to: string
-  color?: string
 }
 
 export const navList: NavItem[] = [

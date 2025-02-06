@@ -43,3 +43,11 @@ const linkToMaterials = () => {
   router.push('/materials')
 }
 </script>
+
+<style lang="scss" scoped>
+h1 {
+  height: 50px;
+  margin: 20px 0;
+  line-height: 50px;
+}
+</style>
