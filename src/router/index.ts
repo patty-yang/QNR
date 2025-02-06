@@ -25,22 +25,22 @@ const router = createRouter({
           component: () => import('@/views/Materials/InputGroup.vue')
         },
         {
-          path: 'advanced-group',
+          path: '/advanced-group',
           name: 'advanced-group',
           component: () => import('@/views/Materials/AdvancedGroup.vue')
         },
         {
-          path: 'note-group',
+          path: '/note-group',
           name: 'note-group',
           component: () => import('@/views/Materials/NoteGroup.vue')
         },
         {
-          path: 'personal-info-group',
+          path: '/personal-info-group',
           name: 'personal-info-group',
           component: () => import('@/views/Materials/PersonalInfoGroup.vue')
         },
         {
-          path: ' contact-group',
+          path: '/contact-group',
           name: 'contact-group',
           component: () => import('@/views/Materials/ContactGroup.vue')
         }

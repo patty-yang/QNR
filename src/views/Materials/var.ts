@@ -19,21 +19,21 @@ export const navList: NavItem[] = [
   {
     icon: 'CircleCheck',
     text: '高级题形',
-    to: 'select-group'
+    to: 'advanced-group'
   },
   {
     icon: 'CircleCheck',
     text: '备注说明',
-    to: '/select-group'
+    to: 'note-group'
   },
   {
     icon: 'CircleCheck',
     text: '个人信息',
-    to: '/select-group'
+    to: 'personal-info-group'
   },
   {
     icon: 'CircleCheck',
     text: '联系方式',
-    to: '/select-group'
+    to: 'contact-group'
   }
 ]
