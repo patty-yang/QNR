@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,17 +6,52 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: () => import('@/views/HomeView.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/materials',
+      name: 'Materials',
+      component: () => import('@/views/Materials/index.vue'),
+      redirect: '/select-group',
+      children: [
+        {
+          path: '/select-group',
+          name: 'select-group',
+          component: () => import('@/views/Materials/SelectGroup.vue')
+        },
+        {
+          path: '/input-group',
+          name: 'input-group',
+          component: () => import('@/views/Materials/InputGroup.vue')
+        },
+        {
+          path: 'advanced-group',
+          name: 'advanced-group',
+          component: () => import('@/views/Materials/AdvancedGroup.vue')
+        },
+        {
+          path: 'note-group',
+          name: 'note-group',
+          component: () => import('@/views/Materials/NoteGroup.vue')
+        },
+        {
+          path: 'personal-info-group',
+          name: 'personal-info-group',
+          component: () => import('@/views/Materials/PersonalInfoGroup.vue')
+        },
+        {
+          path: ' contact-group',
+          name: 'contact-group',
+          component: () => import('@/views/Materials/ContactGroup.vue')
+        }
+      ]
     },
-  ],
+    {
+      path: '/editor',
+      name: 'Editor',
+      component: () => import('@/views/Editor/index.vue')
+    }
+  ]
 })
 
 export default router
