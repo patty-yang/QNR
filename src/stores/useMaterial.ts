@@ -1,10 +1,10 @@
 // 组件市场所有组件状态的仓库
-
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import { defaultStatusMap } from '../configs/defaultStatus/defaultStatusMap'
 
+import { setTextStatus } from './actions'
 export const useMaterial = defineStore('materialStore', {
   state: () => ({
     currentMaterialCom: 'single-select',
@@ -13,5 +13,9 @@ export const useMaterial = defineStore('materialStore', {
       'single-select': defaultStatusMap['single-select'](),
       'multi-select': {}
     }
-  })
+  }),
+
+  actions: {
+    setTextStatus
+  }
 })
