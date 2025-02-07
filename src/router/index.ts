@@ -17,32 +17,75 @@ const router = createRouter({
         {
           path: '/select-group',
           name: 'select-group',
-          component: () => import('@/views/Materials/SelectGroup.vue')
+          component: () => import('@/views/Materials/SelectGroupView.vue'),
+          redirect: '/single-select',
+          children: [
+            {
+              path: '/single-select',
+              name: 'single-select',
+              component: () =>
+                import(
+                  '@/components/SurveyComs/Materials/SelectComs/SingleSelect.vue'
+                )
+            },
+            {
+              path: '/multi-select',
+              name: 'multi-select',
+              component: () =>
+                import(
+                  '@/components/SurveyComs/Materials/SelectComs/MultiSelect.vue'
+                )
+            },
+            {
+              path: '/option-select',
+              name: 'option-select',
+              component: () =>
+                import(
+                  '@/components/SurveyComs/Materials/SelectComs/Option.vue'
+                )
+            },
+            {
+              path: '/single-pic-select',
+              name: 'single-pic-select',
+              component: () =>
+                import(
+                  '@/components/SurveyComs/Materials/SelectComs/SinglePicSelect.vue'
+                )
+            },
+            {
+              path: '/multi-pic-select',
+              name: 'multi-pic-select',
+              component: () =>
+                import(
+                  '@/components/SurveyComs/Materials/SelectComs/MultiPicSelect.vue'
+                )
+            }
+          ]
         },
         {
           path: '/input-group',
           name: 'input-group',
-          component: () => import('@/views/Materials/InputGroup.vue')
+          component: () => import('@/views/Materials/InputGroupView.vue')
         },
         {
           path: '/advanced-group',
           name: 'advanced-group',
-          component: () => import('@/views/Materials/AdvancedGroup.vue')
+          component: () => import('@/views/Materials/AdvancedGroupView.vue')
         },
         {
           path: '/note-group',
           name: 'note-group',
-          component: () => import('@/views/Materials/NoteGroup.vue')
+          component: () => import('@/views/Materials/NoteGroupView.vue')
         },
         {
           path: '/personal-info-group',
           name: 'personal-info-group',
-          component: () => import('@/views/Materials/PersonalInfoGroup.vue')
+          component: () => import('@/views/Materials/PersonalInfoGroupView.vue')
         },
         {
           path: '/contact-group',
           name: 'contact-group',
-          component: () => import('@/views/Materials/ContactGroup.vue')
+          component: () => import('@/views/Materials/ContactGroupView.vue')
         }
       ]
     },

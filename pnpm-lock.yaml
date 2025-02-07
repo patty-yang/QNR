@@ -23,6 +23,9 @@ importers:
       sass-embedded:
         specifier: ^1.83.4
         version: 1.83.4
+      uuid:
+        specifier: ^11.0.5
+        version: 11.0.5
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
@@ -529,6 +532,34 @@ packages:
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
+
+  '@oxlint/linux-arm64-musl@0.15.9':
+    resolution: {integrity: sha512-wI1yvE490/r4GAmiocIsYKEY++SGzbcO7dwPrx6ZwvPmAhHqdM0v6GFJdUx6Pk9DnvATSgptiF5QnpRb3ZRqdQ==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxlint/linux-x64-gnu@0.15.9':
+    resolution: {integrity: sha512-EE6HtlWAyT1FJ4BOy+qXKqbQgsKrBeom5qjUsTUBrh2SdNeWSscgOQEaxupWlToxLX+O322L9iY07GsR0pgDuQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@oxlint/linux-x64-musl@0.15.9':
+    resolution: {integrity: sha512-TGmYoNkxLxYzQTAICF7WN+FWYZ3Gg2MgKCRhnLQGQ3GPPKy616nBu4ICENgxa2r5IHnNrRSRR8wJlyXS6XK3/Q==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@oxlint/win32-arm64@0.15.9':
+    resolution: {integrity: sha512-dA5UTFXYepfVLX2lowhAgBqKif2Ww6AwGi5rZPXXR2g6+ZenRyTxwY2WOoVZUpxwaBjG+9H/04lSUDH8nAB4JQ==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@oxlint/win32-x64@0.15.9':
+    resolution: {integrity: sha512-6lqsMe8SEJ2hCvz07WDPXjaimM2lLbNj26LVWDOluENQhJ15TAmpQXv4WIhlkSM2NTDJMw3ESiQ7FPAVqaqCFw==}
+    cpu: [x64]
+    os: [win32]
 
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
@@ -1914,6 +1945,10 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
+  uuid@11.0.5:
+    resolution: {integrity: sha512-508e6IcKLrhxKdBbcA2b4KQZlLVp2+J5UwQ6F7Drckkc5N9ZJwFa4TgWtsww9UG8fGHbm6gbV19TdM5pQ4GaIA==}
+    hasBin: true
+
   varint@6.0.0:
     resolution: {integrity: sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==}
 
@@ -2454,6 +2489,21 @@ snapshots:
     optional: true
 
   '@oxlint/linux-arm64-gnu@0.15.9':
+    optional: true
+
+  '@oxlint/linux-arm64-musl@0.15.9':
+    optional: true
+
+  '@oxlint/linux-x64-gnu@0.15.9':
+    optional: true
+
+  '@oxlint/linux-x64-musl@0.15.9':
+    optional: true
+
+  '@oxlint/win32-arm64@0.15.9':
+    optional: true
+
+  '@oxlint/win32-x64@0.15.9':
     optional: true
 
   '@pkgr/core@0.1.1': {}
@@ -3454,6 +3504,11 @@ snapshots:
       '@oxlint/darwin-arm64': 0.15.9
       '@oxlint/darwin-x64': 0.15.9
       '@oxlint/linux-arm64-gnu': 0.15.9
+      '@oxlint/linux-arm64-musl': 0.15.9
+      '@oxlint/linux-x64-gnu': 0.15.9
+      '@oxlint/linux-x64-musl': 0.15.9
+      '@oxlint/win32-arm64': 0.15.9
+      '@oxlint/win32-x64': 0.15.9
 
   p-limit@3.1.0:
     dependencies:
@@ -3844,6 +3899,8 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
+
+  uuid@11.0.5: {}
 
   varint@6.0.0: {}
 

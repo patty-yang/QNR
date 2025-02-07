@@ -5,8 +5,10 @@
       <slot />
     </div>
     <div class="center">
-      <!-- 显示对应的业务组件 -->
-      显示对应的业务组件
+      <!-- 对应的业务组件 -->
+      <RouterView v-slot="{ Component }">
+        <component :is="Component" :status="currentCom" :serialNum="1" />
+      </RouterView>
     </div>
     <div class="right">
       <!-- 编辑面板 -->
@@ -14,7 +16,13 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useMaterial } from '@/stores/useMaterial'
+
+const store = useMaterial()
+// 拿到当前选中组件的状态数据
+const currentCom = computed(() => store.coms[store.currentMaterialCom].status)
+</script>
 <style lang="scss" scoped>
 .layout-container {
   width: 100%;
