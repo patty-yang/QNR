@@ -66,7 +66,7 @@ export default function () {
         status: ['16', '14', '12'],
         isShow: true,
         name: 'size-editor',
-        editCom: markRaw(DescEditor)
+        editCom: markRaw(SizeEditor)
       },
       titleWeight: {
         id: uuid(),

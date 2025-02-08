@@ -4,9 +4,17 @@ import { defineStore } from 'pinia'
 
 import { defaultStatusMap } from '../configs/defaultStatus/defaultStatusMap'
 
-import { setTextStatus } from './actions'
+import { setTextStatus, addOption, removeOption } from './actions'
+
+interface State {
+  currentMaterialCom: string
+  coms: {
+    [key: string]: any
+  }
+}
+
 export const useMaterial = defineStore('materialStore', {
-  state: () => ({
+  state: (): State => ({
     currentMaterialCom: 'single-select',
     // 记录所有的业务组件
     coms: {
@@ -16,6 +24,8 @@ export const useMaterial = defineStore('materialStore', {
   }),
 
   actions: {
-    setTextStatus
+    setTextStatus,
+    addOption,
+    removeOption
   }
 })

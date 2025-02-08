@@ -15,12 +15,17 @@ export type PicTitleDescStatusArr = {
   value: string
 }[]
 
+export type OptionStatusArray =
+  | StringStatusArr
+  | ValueStatusArr
+  | PicTitleDescStatusArr
+
 export interface TextProps extends BaseProps {
   status: string
 }
 
 export interface OptionsProps extends BaseProps {
-  status: StringStatusArr | ValueStatusArr | PicTitleDescStatusArr
+  status: OptionStatusArray
   currentStatus: number
 }
 
@@ -42,4 +47,10 @@ export interface BaseStatus {
 // 并不是所有业务组件都有 options 这个设置项，所以分开定义
 export interface OptionsStatus extends BaseStatus {
   options: OptionsProps
+}
+
+export const isStringArray = (
+  status: OptionStatusArray
+): status is string[] => {
+  return Array.isArray(status) && typeof status[0] === 'string'
 }

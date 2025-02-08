@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import EditPanel from '@/components/SurveyComs/EditItems/EditPanel.vue'
 import { useMaterial } from '@/stores/useMaterial'
+import { ElMessage } from 'element-plus'
 
 const store = useMaterial()
 // 拿到当前选中组件的状态数据
@@ -43,6 +44,18 @@ const updateStatus = (
       }
       break
 
+    case 'options': {
+      // 删除
+      if (payload && typeof payload === 'number') {
+        const result = store.removeOption(
+          currentCom.value.status[configKey],
+          payload
+        )
+      } else {
+        // 新增
+        store.addOption(currentCom.value.status[configKey])
+      }
+    }
     default:
       break
   }

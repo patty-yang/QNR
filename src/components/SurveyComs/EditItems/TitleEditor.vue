@@ -12,7 +12,10 @@
 <script setup lang="ts">
 import type { VueComType } from '@/types'
 
-const updateStatus = inject('updateStatus')
+const updateStatus = inject('updateStatus') as (
+  configKey: string,
+  payload?: string | number | boolean | object
+) => void
 
 const props = defineProps<{
   status: string
