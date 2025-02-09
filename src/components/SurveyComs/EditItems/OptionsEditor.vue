@@ -29,7 +29,7 @@ const updateStatus = inject('updateStatus') as (
 ) => void
 
 const props = defineProps<{
-  status: string
+  status: string[]
   isShow: boolean
   configKey: string
   editCom: VueComType

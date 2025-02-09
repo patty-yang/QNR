@@ -27,7 +27,7 @@
       }"
       :style="{
         fontSize: `${descSize}px`,
-        color: `${titleColor}`
+        color: `${descColor}`
       }"
     >
       {{ desc }}

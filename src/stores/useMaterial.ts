@@ -1,10 +1,18 @@
 // 组件市场所有组件状态的仓库
-import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 import { defaultStatusMap } from '../configs/defaultStatus/defaultStatusMap'
 
-import { setTextStatus, addOption, removeOption } from './actions'
+import {
+  setTextStatus,
+  addOption,
+  removeOption,
+  setPosition,
+  setSize,
+  setWeight,
+  setItalic,
+  setColor
+} from './actions'
 
 interface State {
   currentMaterialCom: string
@@ -26,6 +34,11 @@ export const useMaterial = defineStore('materialStore', {
   actions: {
     setTextStatus,
     addOption,
-    removeOption
+    removeOption,
+    setPosition,
+    setSize,
+    setWeight,
+    setItalic,
+    setColor
   }
 })

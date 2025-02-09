@@ -18,3 +18,23 @@ export const removeOption = (optionProps: OptionsProps, index: number) => {
   optionProps.status.splice(index, 1)
   return true
 }
+
+export const setPosition = (optionProps: OptionsProps, index: number) => {
+  optionProps.currentStatus = index
+}
+
+export const setSize = (optionProps: OptionsProps, index: number) => {
+  optionProps.currentStatus = index
+}
+
+export const setWeight = (optionProps: OptionsProps, index: number) => {
+  optionProps.currentStatus = index
+}
+
+export const setItalic = (optionProps: OptionsProps, index: number) => {
+  optionProps.currentStatus = index
+}
+
+export const setColor = (optionProps: TextProps, color: string) => {
+  optionProps.status = color
+}
