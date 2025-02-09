@@ -63,7 +63,7 @@ const updateStatus = (
       if (typeof payload !== 'number') {
         console.error('invalid to be number')
       }
-      store.setPosition(currentCom.value.status[configKey], payload)
+      store.setPosition(currentCom.value.status[configKey], payload as number)
     }
 
     case 'titleSize':
@@ -71,7 +71,7 @@ const updateStatus = (
       if (typeof payload !== 'number') {
         console.error('invalid to be number')
       }
-      store.setSize(currentCom.value.status[configKey], payload)
+      store.setSize(currentCom.value.status[configKey], payload as number)
     }
 
     case 'titleWeight':
@@ -79,7 +79,7 @@ const updateStatus = (
       if (typeof payload !== 'number') {
         console.error('invalid to be number')
       }
-      store.setWeight(currentCom.value.status[configKey], payload)
+      store.setWeight(currentCom.value.status[configKey], payload as number)
     }
 
     case 'titleItalic':
@@ -87,12 +87,12 @@ const updateStatus = (
       if (typeof payload !== 'number') {
         console.error('invalid to be number')
       }
-      store.setItalic(currentCom.value.status[configKey], payload)
+      store.setItalic(currentCom.value.status[configKey], payload as number)
     }
 
     case 'titleColor':
     case 'descColor': {
-      store.setColor(currentCom.value.status[configKey], payload)
+      store.setColor(currentCom.value.status[configKey], payload as string)
     }
     default:
       break
