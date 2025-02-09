@@ -49,8 +49,34 @@ export interface OptionsStatus extends BaseStatus {
   options: OptionsProps
 }
 
+// 确定 status 是字符串数组
 export const isStringArray = (
   status: OptionStatusArray
 ): status is string[] => {
   return Array.isArray(status) && typeof status[0] === 'string'
 }
+
+// // 确定 status 是 { value: string; status: string } 数组
+// export const isValueStatusArr = (
+//   status: OptionStatusArray
+// ): status is { value: string; status: string }[] => {
+//   return (
+//     Array.isArray(status) &&
+//     typeof status[0] === 'object' &&
+//     'value' in status[0] &&
+//     'status' in status[0]
+//   )
+// }
+
+// // 确定 status 是 { picTitle: string; picDesc: string; value: string } 数组
+// export const isPicTitleDescStatusArr = (
+//   status: OptionStatusArray
+// ): status is { picTitle: string; picDesc: string; value: string }[] => {
+//   return (
+//     Array.isArray(status) &&
+//     typeof status[0] === 'object' &&
+//     'picTitle' in status[0] &&
+//     'picDesc' in status[0] &&
+//     'value' in status[0]
+//   )
+// }

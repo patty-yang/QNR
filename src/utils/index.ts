@@ -7,6 +7,9 @@ export const getTextStatus = (props: TextProps) => {
 export const getStringStatus = (props: OptionsProps) => {
   return props.status
 }
+export const getPicTitleDescStatusArr = (props: OptionsProps) => {
+  return props.status
+}
 
 export const getCurrentStatus = (props: OptionsProps) => {
   return props.currentStatus

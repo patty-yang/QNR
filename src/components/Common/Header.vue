@@ -17,6 +17,7 @@
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const linkToHome = () => {
+  localStorage.setItem('activeView', 'home')
   router.push('/')
 }
 </script>

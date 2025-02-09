@@ -27,11 +27,15 @@ export const useMaterial = defineStore('materialStore', {
     // 记录所有的业务组件
     coms: {
       'single-select': defaultStatusMap['single-select'](),
-      'multi-select': {}
+      'single-pic-select': defaultStatusMap['single-pic-select']()
+      // 'multi-select': {}
     }
   }),
 
   actions: {
+    setCurrentMaterialCom(com: string) {
+      this.currentMaterialCom = com
+    },
     setTextStatus,
     addOption,
     removeOption,

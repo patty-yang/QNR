@@ -5,23 +5,23 @@
     }"
   >
     <MaterialsHeader
-      :desc="status.desc"
+      :desc="state.desc"
       :serialNum="serialNum"
-      :title="status.title"
-      :titleSize="status.titleSize"
-      :descSize="status.descSize"
-      :titleWeight="status.titleWeight"
-      :descWeight="status.descWeight"
-      :titleItalic="status.titleItalic"
-      :descItalic="status.descItalic"
-      :titleColor="status.titleColor"
-      :descColor="status.descColor"
+      :title="state.title"
+      :titleSize="state.titleSize"
+      :descSize="state.descSize"
+      :titleWeight="state.titleWeight"
+      :descWeight="state.descWeight"
+      :titleItalic="state.titleItalic"
+      :descItalic="state.descItalic"
+      :titleColor="state.titleColor"
+      :descColor="state.descColor"
     />
 
     <div class="radio-group">
       <el-radio-group>
         <el-radio
-          v-for="(item, index) in status.options"
+          v-for="(item, index) in state.options"
           :value="item"
           :key="index"
           size="large"
@@ -50,7 +50,7 @@ const props = defineProps<{
   status: OptionsStatus
 }>()
 
-const status = computed(() => ({
+const state = computed(() => ({
   title: getTextStatus(props.status.title),
   desc: getTextStatus(props.status.desc),
   options: getStringStatus(props.status.options),

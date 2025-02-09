@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useMaterial } from '@/stores/useMaterial'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -95,6 +96,16 @@ const router = createRouter({
       component: () => import('@/views/Editor/index.vue')
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const activeView = localStorage.getItem('activeView')
+  const materialStore = useMaterial()
+  // 是否是组件市场
+  if (activeView === 'materials' && to.name) {
+    materialStore.setCurrentMaterialCom(to.name as string)
+  }
+  next()
 })
 
 export default router

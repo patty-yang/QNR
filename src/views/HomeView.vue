@@ -36,10 +36,12 @@ const tableData = ref([
 ])
 
 const linkToEditor = () => {
+  localStorage.setItem('activeView', 'editor')
   router.push('/editor')
 }
 
 const linkToMaterials = () => {
+  localStorage.setItem('activeView', 'materials')
   router.push('/materials')
 }
 </script>
