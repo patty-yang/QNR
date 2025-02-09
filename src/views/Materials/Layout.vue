@@ -44,56 +44,71 @@ const updateStatus = (
       }
       break
 
-    case 'options': {
-      // 删除
-      if (typeof payload === 'number') {
-        const result = store.removeOption(
-          currentCom.value.status[configKey],
-          payload
-        )
-        if (result) ElMessage.success('删除成功')
-        else ElMessage.error('至少保留两个选项')
-      } else {
-        // 新增
-        store.addOption(currentCom.value.status[configKey])
+    case 'options':
+      {
+        // 删除
+        if (typeof payload === 'number') {
+          const result = store.removeOption(
+            currentCom.value.status[configKey],
+            payload
+          )
+          if (result) ElMessage.success('删除成功')
+          else ElMessage.error('至少保留两个选项')
+        } else {
+          // 新增
+          store.addOption(currentCom.value.status[configKey])
+        }
       }
-    }
+      break
 
-    case 'position': {
-      if (typeof payload !== 'number') {
-        console.error('invalid to be number')
+    case 'position':
+      {
+        if (typeof payload !== 'number') {
+          console.error('invalid to be number')
+        }
+
+        store.setPosition(currentCom.value.status[configKey], payload as number)
       }
-      store.setPosition(currentCom.value.status[configKey], payload as number)
-    }
+      break
 
     case 'titleSize':
-    case 'descSize': {
-      if (typeof payload !== 'number') {
-        console.error('invalid to be number')
+    case 'descSize':
+      {
+        if (typeof payload !== 'number') {
+          console.error('invalid to be number')
+        }
+        store.setSize(currentCom.value.status[configKey], payload as number)
       }
-      store.setSize(currentCom.value.status[configKey], payload as number)
-    }
+      break
 
     case 'titleWeight':
-    case 'descWeight': {
-      if (typeof payload !== 'number') {
-        console.error('invalid to be number')
+    case 'descWeight':
+      {
+        if (typeof payload !== 'number') {
+          console.error('invalid to be number')
+        }
+        store.setWeight(currentCom.value.status[configKey], payload as number)
       }
-      store.setWeight(currentCom.value.status[configKey], payload as number)
-    }
+
+      break
 
     case 'titleItalic':
-    case 'descItalic': {
-      if (typeof payload !== 'number') {
-        console.error('invalid to be number')
+    case 'descItalic':
+      {
+        if (typeof payload !== 'number') {
+          console.error('invalid to be number')
+        }
+        store.setItalic(currentCom.value.status[configKey], payload as number)
       }
-      store.setItalic(currentCom.value.status[configKey], payload as number)
-    }
+      break
 
     case 'titleColor':
-    case 'descColor': {
-      store.setColor(currentCom.value.status[configKey], payload as string)
-    }
+    case 'descColor':
+      {
+        store.setColor(currentCom.value.status[configKey], payload as string)
+      }
+      break
+
     default:
       break
   }

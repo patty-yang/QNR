@@ -24,6 +24,8 @@
 <script setup lang="ts">
 import ButtonGroup from './ButtonGroup.vue'
 
+import type { VueComType } from '@/types'
+
 const props = defineProps<{
   currentStatus: number
   status: string[]
@@ -32,7 +34,10 @@ const props = defineProps<{
   editCom: VueComType
 }>()
 
-const updateStatus = inject('updateStatus')
+const updateStatus = inject('updateStatus') as (
+  configKey: string,
+  payload?: string | number | boolean | object
+) => void
 
 const changePosition = (position: number) => {
   updateStatus(props.configKey, position)

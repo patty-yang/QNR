@@ -17,8 +17,6 @@ import type { Status } from '@/types'
 const props = defineProps<{
   com: Status
 }>()
-
-console.log('🚀 ~ props:', props)
 </script>
 
 <style scoped lang="scss">

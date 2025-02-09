@@ -1,7 +1,7 @@
 <template>
   <ButtonGroup
     :title="`${configKey === 'titleSize' ? '标题' : '描述'}倾斜`"
-    :status="`${status[currentStatus]}px`"
+    :status="`${status[currentStatus]}`"
   >
     <el-button-group>
       <el-button
@@ -28,6 +28,7 @@
 <script setup lang="ts">
 import ButtonGroup from './ButtonGroup.vue'
 
+import type { VueComType } from '@/types'
 const props = defineProps<{
   currentStatus: number
   status: string[]
@@ -35,7 +36,10 @@ const props = defineProps<{
   configKey: string
   editCom: VueComType
 }>()
-const updateStatus = inject('updateStatus')
+const updateStatus = inject('updateStatus') as (
+  configKey: string,
+  payload?: string | number | boolean | object
+) => void
 
 const changeSize = (size: number) => {
   updateStatus(props.configKey, size)
