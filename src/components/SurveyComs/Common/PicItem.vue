@@ -5,7 +5,8 @@
       <div class="top flex justify-content-center align-items-center">
         <el-upload
           :show-file-list="false"
-          action=""
+          action="/api/upload"
+          name="image"
           :on-success="handleAvatarSuccess"
         >
           <img v-if="imgUrl" :src="imgUrl" alt="" />

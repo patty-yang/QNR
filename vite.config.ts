@@ -12,9 +12,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  server: {
-    port: 1234
-  },
   plugins: [
     vue(),
     vueJsx(),
@@ -30,6 +27,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  server: {
+    port: 1234,
+    proxy: {
+      '/api': 'http://localhost:3001'
     }
   }
 })
