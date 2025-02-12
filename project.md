@@ -123,5 +123,5 @@ export default function () {
 
 TODO:
 
-1.  ts 类型错误修复
-2.  其他编辑区域完善
+1.  ts 类型错误修复50%
+2.  其他编辑区域完善 30%
